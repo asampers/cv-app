@@ -5,9 +5,9 @@ function App() {
   
 
   return (
-    <>
-      <h1>Testing one two</h1>
-    </>
+    <div className='resume container-fluid d-flex align-items-center flex-column border rounded border-black'>
+      <h1>Resume</h1>
+    </div>
   )
 }
 
