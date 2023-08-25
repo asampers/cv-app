@@ -1,9 +1,11 @@
 //import { useState } from 'react'
-import './App.css'
-import { Header } from './components/Header'
-import { Education } from './components/Education'
-import { Experience } from './components/Experience'
-import { Container } from './components/Container'
+import './App.css';
+import { Header } from './components/Header';
+import { Education } from './components/Education';
+import { Experience } from './components/Experience';
+import { Container } from './components/Container';
+import { Skills } from './components/Skills';
+
 function App() {
 
   return (
@@ -16,7 +18,7 @@ function App() {
       <Container title="Experience">
         <Experience />
       </Container>
-      
+      <Skills />
     </div>
   )
 }
