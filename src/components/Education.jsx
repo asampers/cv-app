@@ -1,5 +1,4 @@
-export function Education() {
-  
+function Education() {
   return (
     <>
     <form>
@@ -14,7 +13,7 @@ export function Education() {
             <label>Degree</label>
           </div>
           <div className="form-floating mb-3 me-2">
-            <input type="tel" className="form-control" placeholder="Computer Science"/>
+            <input type="text" className="form-control" placeholder="Computer Science"/>
             <label>Major</label>
           </div>
           <div className="form-floating mb-3">
@@ -44,3 +43,5 @@ export function Education() {
     </>
   )
 }
+
+export { Education }

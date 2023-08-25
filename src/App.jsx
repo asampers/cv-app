@@ -2,6 +2,7 @@
 import './App.css'
 import { Header } from './components/Header'
 import { Education } from './components/Education'
+import { Experience } from './components/Experience'
 import { Container } from './components/Container'
 function App() {
 
@@ -12,6 +13,9 @@ function App() {
       <Container title="Education">
         <Education />
       </Container>  
+      <Container title="Experience">
+        <Experience />
+      </Container>
       
     </div>
   )

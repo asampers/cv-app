@@ -1,4 +1,5 @@
-export function Container({title, children}) {
+// eslint-disable-next-line react/prop-types
+function Container({title, children}) {
   return (
     <>
       <h2>{title}</h2>
@@ -7,4 +8,4 @@ export function Container({title, children}) {
   )
 }
 
-//export { Container };
+export { Container };
