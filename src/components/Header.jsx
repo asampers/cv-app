@@ -1,51 +1,47 @@
+import { useState } from 'react';
+import { Buttons } from './Buttons';
+import { HeaderForm } from './HeaderForm';
+import '../styles/Header.css'
+
 export function Header() {
+  const [data, setData] = useState({});
+  const [showForm, setShowForm] = useState(false);
+  const noData = Object.keys(data).length === 0;
   
-  return (
-    <>
-    <h2>Header</h2>
-    <form>
-      <div className="d-flex flex-column">
-        <div className="d-flex">
-          <div className="form-floating mb-3 me-2">
-            <input type="text" className="form-control" placeholder="Jane"/>
-            <label>First Name</label>
-          </div> 
-          <div className="form-floating mb-3 me-2">
-            <input type="text" className="form-control" placeholder="Smith"/>
-            <label>Last Name</label>
-          </div>
-          <div className="form-floating mb-3 me-2">
-            <input type="tel" className="form-control" placeholder="123-456-7899"/>
-            <label>Phone</label>
-          </div>
-          <div className="form-floating mb-3">
-            <input type="text" className="form-control" placeholder="NYC"/>
-            <label>Location</label>
-          </div>
+  function toggleShowForm() {
+    setShowForm(!showForm);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    toggleShowForm();
+    const form = e.target;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
+    setData(formJson);
+  }
+
+  if (!showForm) {
+    return (
+      <>
+      <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
+        <div className='d-flex align-items-center'>
+          <h2>{noData && 'Header'}</h2>
+          <h3>{data.firstName} {data.lastName}</h3>
+          <Buttons text={noData ? "Add" : "Edit"} onClick={toggleShowForm}/>
         </div>
-        <div className="d-flex">
-          <div className="form-floating flex-fill mb-3 me-2">
-            <input
-              type="email"
-              className="form-control"
-              placeholder="name@example.com"
-            />
-            <label>Email address</label>
-          </div>
-          <div className="form-floating mb-3 me-2">
-            <input type="text" className="form-control" placeholder="LinkedIn"/>
-            <label>LinkedIn</label>
-          </div>
-          <div className="form-floating mb-3">
-            <input type="text" className="form-control" placeholder="Portfolio"/>
-            <label>Portfolio</label>
-          </div>
-          <button type="submit" className="btn btn-primary align-self-center ms-4">
-            Submit
-          </button>
-        </div> 
-      </div> 
-    </form>
-    </>
+        <div className='d-flex align-items-center mt-2'>
+          {data.email && <p className='me-3'><ion-icon name="mail-outline"></ion-icon>{data.email}</p> }
+          {data.phone && <p className='me-3'><ion-icon name="call-outline"></ion-icon>{data.phone}</p> }
+          {data.location && <p className='me-3'><ion-icon name="location-outline"></ion-icon>{data.location}</p> }
+          {data.linkedIn && <p className='me-3'><ion-icon name="logo-linkedin"></ion-icon>{data.linkedIn}</p> }
+          {data.portfolio && <p className='me-3'><ion-icon name="book-outline"></ion-icon>{data.portfolio}</p> }
+        </div>
+      </div>
+      </>
+    )
+  }  
+  return (
+    <HeaderForm onSubmit={handleSubmit} data={data} />
   )
 }
