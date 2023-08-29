@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 const Data = () => {
-  const [data, setData] = useState(new Array(1).fill({}));
+  const [data, setData] = useState(new Array(1).fill({id: 0}));
   const [showForm, setShowForm] = useState(false);
-  const [selectedId, setSelectedId] = useState(0)
-  const noData = Object.keys(data[0]).length === 0;
+  const [selectedId, setSelectedId] = useState(0);
+  const [counter, setCounter] = useState(0);
+  const noData = Object.keys(data[0]).length === 1;
 
   function displayInfo(index) {
     return !this.showForm || this.selectedId != index
@@ -16,7 +17,6 @@ const Data = () => {
 
   function toggleEdit(e) {
     const index = e.target.getAttribute("data-index");
-    console.log(index)
     setSelectedId(index);
     toggleShowForm(!showForm)
   }
@@ -26,23 +26,24 @@ const Data = () => {
   }
 
   function addEntry() {
-    const newItem = {};
+    const newItem = {id: counter+1};
     const dataCopy = [...data];
     dataCopy.push(newItem);
-    const newIndex = `${dataCopy.length-1}`
-    console.log(newIndex)
     setData(dataCopy)
-    setSelectedId(newIndex);
+    setSelectedId(newItem.id);
+    setCounter(newItem.id)
     toggleShowForm(!showForm)
   }
 
   function handleSubmit(e) {
-    const index = e.target.getAttribute("data-index")
+    const ID = e.target.getAttribute("data-index")
+    const index = data.findIndex(obj => obj.id == ID)
     e.preventDefault();
     toggleShowForm();
     const form = e.target;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
+    formJson.id = ID
     const dataCopy = [...data];
     dataCopy[index] = formJson;
     setData(dataCopy);

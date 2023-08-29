@@ -14,19 +14,15 @@ function Education() {
           {<h3>Education</h3>}
           <Buttons text="Add School" onClick={items.noData ? items.toggleShowForm : items.addEntry}/>
         </div>
-        {items.data.map((school, index) => (
-          <Fragment key={index}>
-            {(items.displayInfo(index)) && <EducationInfo onClick={items.toggleEdit} data={school} index={index} />}
-            {(items.displayForm(index)) && <EducationForm onSubmit={items.handleSubmit} data={school} index={index}/>}
+        {items.data.map((school) => (
+          <Fragment key={school.id}>
+            {(items.displayInfo(school.id)) && <EducationInfo onClick={items.toggleEdit} data={school} />}
+            {(items.displayForm(school.id)) && <EducationForm onSubmit={items.handleSubmit} data={school} />}
           </Fragment>
         ))}
       </div>
       </>
     )
-
-
-    
-
 }
 
 export { Education }

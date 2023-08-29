@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-export function EducationForm({data, onSubmit, index}) {
+export function EducationForm({data, onSubmit}) {
   return (
-    <form onSubmit={onSubmit} data-index={index}>
+    <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex flex-column">
         <div className="d-flex">
           <div className="form-floating mb-3 me-2">
