@@ -1,49 +1,26 @@
+import { ExperienceForm } from "./ExperienceForm"
+import { ExperienceInfo } from "./ExperienceInfo";
+import { Buttons } from "./Buttons";
+import { Data } from "./Data"
+import { Fragment } from "react";
+
 export function Experience() {
-  
+  const items = Data();
+
   return (
     <>
-    <form>
-      <div className="d-flex">
-        <div className="d-flex flex-column">
-          <div className="d-flex">
-            <div className="form-floating mb-3 me-2">
-              <input type="text" className="form-control" placeholder="Administrator"/>
-              <label>Job Title</label>
-            </div> 
-            <div className="form-floating mb-3 me-2">
-              <input type="text" className="form-control" placeholder="Verizon"/>
-              <label>Company</label>
-            </div>
-          </div>
-          <div className="form-floating mb-3 me-2">
-            <textarea
-              className="form-control"
-              placeholder="Responsibilities"
-              style={{ height: 100 }}
-              defaultValue={""}
-            />
-            <label>Responsibilities</label>
-          </div>
+      <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
+        <div className='d-flex align-items-center'>
+          {<h3>Experience</h3>}
+          <Buttons text="Add Job" onClick={items.noData ? items.toggleShowForm : items.addEntry}/>
         </div>
-        <div className="d-flex flex-column">
-          <div className="form-floating mb-3 me-2">
-            <input
-              type="month"
-              className="form-control"
-              placeholder="September"
-            />
-            <label>From</label>
-          </div>
-          <div className="form-floating mb-3 me-2">
-            <input type="month" className="form-control" placeholder="May"/>
-            <label>To</label>
-          </div>
-        </div> 
-        <button type="submit" className="btn btn-primary align-self-center ms-4">
-            Submit
-          </button>
-      </div> 
-    </form>
+        {items.data.map((job) => (
+          <Fragment key={job.id}>
+            {(items.displayInfo(job.id)) && <ExperienceInfo onClick={items.toggleEdit} data={job} />}
+            {(items.displayForm(job.id)) && <ExperienceForm onSubmit={items.handleSubmit} data={job} />}
+          </Fragment>
+        ))}
+      </div>
     </>
   )
 }

@@ -10,9 +10,7 @@ function App() {
       <h1>Resume</h1>
       <Header />
       <Education />
-      {/*<Container title="Experience">
-        <Experience />
-      </Container>*/}
+      <Experience />
       <Skills />
     </div>
   )
