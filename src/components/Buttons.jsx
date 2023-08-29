@@ -1,9 +1,9 @@
-// eslint-disable-next-line react/prop-types
-export function Buttons({text, onClick}) {
-  let style = text === "Add" ? "btn-info" : "btn-success"     
+/* eslint-disable react/prop-types */
+export function Buttons({text, onClick, index}) {
+  let style = text.startsWith("Add") ? "btn-info" : "btn-success"     
   
   return (    
-        <button className={`btn ${style} btn-sm ms-2`} onClick={onClick}>
+        <button data-index={index} className={`btn ${style} btn-sm ms-2`} onClick={onClick}>
               {text}
         </button> 
   )       

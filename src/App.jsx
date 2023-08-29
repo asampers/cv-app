@@ -2,7 +2,6 @@ import './App.css';
 import { Header } from './components/Header';
 import { Education } from './components/Education';
 import { Experience } from './components/Experience';
-import { Container } from './components/Container';
 import { Skills } from './components/Skills';
 
 function App() {
@@ -10,12 +9,10 @@ function App() {
     <div className='resume container-fluid d-flex align-items-center flex-column border border-black border-2 rounded'>
       <h1>Resume</h1>
       <Header />
-      <Container title="Education">
-        <Education />
-      </Container>  
-      <Container title="Experience">
+      <Education />
+      {/*<Container title="Experience">
         <Experience />
-      </Container>
+      </Container>*/}
       <Skills />
     </div>
   )

@@ -3,7 +3,7 @@ export function HeaderForm({data, onSubmit}) {
   return (
     <>
     <h2>Header</h2>
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} data-index="0">
       <div className="d-flex flex-column">
         <div className="d-flex">
           <div className="form-floating mb-3 me-2">
