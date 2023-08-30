@@ -6,12 +6,13 @@ import '../styles/Header.css'
 export function Header() {
   const item = Data();
   const person = item.data[0]
+  const fullName = person.firstName + ' ' + person.lastName
   if (!item.showForm) {
     return (
       <>
       <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
         <div className='d-flex align-items-center'>
-          <h3>{item.noData ? 'Header' : person.firstName + ' ' + person.lastName}</h3>
+          <h3>{fullName.trim().length === 0 ? 'Header' : fullName}</h3>
           <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/>
         </div>
         <div className='d-flex align-items-center mt-2'>
