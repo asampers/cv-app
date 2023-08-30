@@ -35,17 +35,26 @@ const Data = () => {
     toggleShowForm(!showForm)
   }
 
+  function createNewObject(form) {
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
+    return formJson
+  }
+
+  function isEmpty(object) {
+    return Object.values(object).every(x => x == 0 || x === '');
+  }
+
   function handleSubmit(e) {
     const ID = e.target.getAttribute("data-index")
     const index = data.findIndex(obj => obj.id == ID)
     e.preventDefault();
     toggleShowForm();
-    const form = e.target;
-    const formData = new FormData(form);
-    const formJson = Object.fromEntries(formData.entries());
-    formJson.id = ID
+    const newObject = createNewObject(e.target);
+    if (isEmpty(newObject)) return;
+    newObject.id = ID;
     const dataCopy = [...data];
-    dataCopy[index] = formJson;
+    dataCopy[index] = newObject;
     setData(dataCopy);
   }
 
