@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export function ExperienceForm({data, onSubmit}) {
   return (
     <form onSubmit={onSubmit} data-index={data.id}>

@@ -11,8 +11,7 @@ export function Header() {
       <>
       <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
         <div className='d-flex align-items-center'>
-          <h2>{item.noData && 'Header'}</h2>
-          <h3>{person.firstName} {person.lastName}</h3>
+          <h3>{item.noData ? 'Header' : person.firstName + ' ' + person.lastName}</h3>
           <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/>
         </div>
         <div className='d-flex align-items-center mt-2'>

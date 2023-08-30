@@ -1,25 +1,20 @@
-import '../styles/Skills.css'
+import '../styles/Skills.css';
+import { SkillsForm } from './SkillsForm';
+import { SkillsInfo } from './SkillsInfo';
+import { Data } from './Data';
+import { Buttons } from './Buttons';
 
 function Skills() {
+  const item = Data();
+  const skills = item.data[0];
+  
   return (
     <>
-    <h2>Skills</h2>
-    <form className="skills">
-      <div className="d-flex">
-          <div className="form-floating flex-fill mb-3 me-2">
-            <textarea
-              className="form-control"
-              placeholder="Responsibilities"
-              style={{ height: 100 }}
-              defaultValue={""}
-            />
-            <label>Type to enter skills, separate by comma</label>
-          </div>
-        <button type="submit" className="btn btn-primary align-self-center ms-4">
-            Submit
-          </button>
-      </div> 
-    </form>
+      <div className='d-flex align-items-center'>
+        <h3>Skills</h3>
+        <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/>
+      </div>
+      {item.showForm ? SkillsForm() : SkillsInfo()}
     </>
   )
 }
