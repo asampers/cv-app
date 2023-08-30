@@ -1,13 +1,13 @@
-export function SkillsForm() {
+export function SkillsForm({data, onSubmit}) {
   return (
-    <form className="skills">
+    <form className="skills" onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex">
           <div className="form-floating flex-fill mb-3 me-2">
             <textarea
               className="form-control"
-              placeholder="Responsibilities"
+              name="skills"
               style={{ height: 100 }}
-              defaultValue={""}
+              defaultValue={data.skills}
             />
             <label>Type to enter skills, separate by comma</label>
           </div>

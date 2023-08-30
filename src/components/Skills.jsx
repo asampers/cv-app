@@ -14,7 +14,7 @@ function Skills() {
         <h3>Skills</h3>
         <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/>
       </div>
-      {item.showForm ? SkillsForm() : SkillsInfo()}
+      {item.showForm ? < SkillsForm data={skills} onSubmit={item.handleSubmit}  /> : <SkillsInfo skills={skills} />}
     </>
   )
 }
