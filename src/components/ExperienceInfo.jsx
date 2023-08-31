@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from "react";
 import { Buttons } from "./Buttons";
+import { formatDate } from "./helperFunctions";
 
 function ExperienceInfo({data, onClick}) {
   const anyData = Object.keys(data).length > 1;
@@ -12,8 +13,7 @@ function ExperienceInfo({data, onClick}) {
           {data.title && <p className='me-3'>Job title: {data.title}</p>}
           {data.company && <p className='me-3'>Company: {data.company}</p> }
           {data.duties && <p className='me-3'>Responsibilities: {data.duties}</p> }
-          {data.startDate && <p className='me-3'>From: {data.startDate}</p> }
-          {data.endDate && <p className='me-3'>To: {data.endDate}</p> }
+          {data.startDate && <p className='me-3'>{formatDate(data.startDate)} - {formatDate(data.endDate)}</p> }
           <Buttons index={data.id} text="Edit" onClick={onClick}/>
         </div>
         <div className='d-flex align-items-center'>
