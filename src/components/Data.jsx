@@ -18,7 +18,7 @@ const Data = () => {
   function toggleEdit(e) {
     const index = e.target.getAttribute("data-index");
     setSelectedId(index);
-    toggleShowForm(!showForm)
+    toggleShowForm()
   }
   
   function toggleShowForm() {
@@ -32,7 +32,7 @@ const Data = () => {
     setData(dataCopy)
     setSelectedId(newItem.id);
     setCounter(newItem.id)
-    toggleShowForm(!showForm)
+    toggleShowForm()
   }
 
   function createNewObject(form) {
@@ -45,20 +45,40 @@ const Data = () => {
     return Object.values(object).every(x => x == 0 || x === '');
   }
 
+  function handleDelete(e) {
+    const ID = e.target.getAttribute("data-index")
+    const index = data.findIndex(obj => obj.id == ID)
+    e.preventDefault();
+    toggleShowForm()
+    const dataCopy = [...data];
+    dataCopy.splice(index, 1)
+    if (dataCopy.length === 0) {
+      const newItem = {id: counter+1};
+      dataCopy.push(newItem);
+      setData(dataCopy)
+      setSelectedId(newItem.id);
+      setCounter(newItem.id)
+    }
+    setData(dataCopy);
+  }
+
   function handleSubmit(e) {
     const ID = e.target.getAttribute("data-index")
     const index = data.findIndex(obj => obj.id == ID)
     e.preventDefault();
     toggleShowForm();
     const newObject = createNewObject(e.target);
-    if (isEmpty(newObject)) return;
-    newObject.id = ID;
     const dataCopy = [...data];
+    if (isEmpty(newObject)) {
+      dataCopy.splice(index, 1)
+    } else {
+    newObject.id = ID;
     dataCopy[index] = newObject;
+    }
     setData(dataCopy);
   }
 
-  return { data, noData, showForm, selectedId, toggleShowForm, handleSubmit, addEntry, toggleEdit, displayInfo, displayForm };
+  return { data, noData, showForm, selectedId, toggleShowForm, handleSubmit, addEntry, toggleEdit, displayInfo, displayForm, handleDelete};
 }
 
 export { Data };

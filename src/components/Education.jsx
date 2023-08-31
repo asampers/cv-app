@@ -9,6 +9,8 @@ function Education() {
   
     return (
       <>
+      {console.log(items.data)}
+      {console.log(items.showForm)}
       <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
         <div className='d-flex align-items-center'>
           {<h3>Education</h3>}
@@ -17,7 +19,7 @@ function Education() {
         {items.data.map((school) => (
           <Fragment key={school.id}>
             {(items.displayInfo(school.id)) && <EducationInfo onClick={items.toggleEdit} data={school} />}
-            {(items.displayForm(school.id)) && <EducationForm onSubmit={items.handleSubmit} data={school} />}
+            {(items.displayForm(school.id)) && <EducationForm onSubmit={items.handleSubmit} onDelete={items.handleDelete} data={school} />}
           </Fragment>
         ))}
       </div>

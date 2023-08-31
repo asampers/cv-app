@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
-export function EducationForm({data, onSubmit}) {
+import { Buttons } from "./Buttons"
+
+export function EducationForm({data, onSubmit, onDelete}) {
   return (
     <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex flex-column">
@@ -35,7 +37,8 @@ export function EducationForm({data, onSubmit}) {
             <input type="month" className="form-control" name="endDate" defaultValue={data.endDate}/>
             <label>To</label>
           </div>
-          <button type="submit" className="btn btn-primary align-self-center ms-4">
+          <Buttons text='Delete' index={data.id} onClick={onDelete}/>
+          <button type="submit" className="btn btn-primary btn-sm align-self-center ms-2">
             Save
           </button>
         </div> 
