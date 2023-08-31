@@ -12,9 +12,9 @@ function Skills() {
     <>
       <div className='d-flex align-items-center'>
         <h3>Skills</h3>
-        <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/>
+        {!item.showForm && <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/> }
       </div>
-      {item.showForm ? < SkillsForm data={skills} onSubmit={item.handleSubmit}  /> : <SkillsInfo skills={skills} />}
+      {item.showForm ? < SkillsForm data={skills} onSubmit={item.handleSubmit} onDelete={item.handleDelete}  /> : <SkillsInfo skills={skills} />}
     </>
   )
 }

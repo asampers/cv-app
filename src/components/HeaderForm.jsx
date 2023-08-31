@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
-export function HeaderForm({data, onSubmit}) {
+import { Buttons } from "./Buttons"
+
+export function HeaderForm({data, onSubmit, onDelete}) {
+  const {id, ...exceptID} = data;
+  const isEmpty = Object.values(exceptID).every(x => x === '')
+
   return (
     <>
-    <h2>Header</h2>
     <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex flex-column">
         <div className="d-flex">
@@ -41,7 +45,8 @@ export function HeaderForm({data, onSubmit}) {
             <input type="text" className="form-control" name='portfolio' defaultValue={data.portfolio}/>
             <label>Portfolio</label>
           </div>
-          <button type="submit" className="btn btn-primary align-self-center ms-4">
+          <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
+          <button type="submit" className="btn btn-primary btn-sm align-self-center ms-2">
             Save
           </button>
         </div> 

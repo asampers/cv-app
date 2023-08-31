@@ -12,7 +12,7 @@ function Education() {
       <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
         <div className='d-flex align-items-center'>
           {<h3>Education</h3>}
-          <Buttons text="Add School" onClick={items.noData ? items.toggleShowForm : items.addEntry}/>
+          {!items.showForm && <Buttons text="Add School" onClick={items.noData ? items.toggleShowForm : items.addEntry}/> }
         </div>
         {items.data.map((school) => (
           <Fragment key={school.id}>

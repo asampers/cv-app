@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
-export function SkillsForm({data, onSubmit}) {
+import { Buttons } from "./Buttons"
+
+export function SkillsForm({data, onSubmit, onDelete}) {
+  const {id, ...exceptID} = data;
+  const isEmpty = Object.values(exceptID).every(x => x === '')
+
   return (
     <form className="skills" onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex">
@@ -12,8 +17,9 @@ export function SkillsForm({data, onSubmit}) {
             />
             <label>Type to enter skills, separate by comma</label>
           </div>
-        <button type="submit" className="btn btn-primary align-self-center ms-4">
-            Submit
+        <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
+        <button type="submit" className="btn btn-primary btn-sm align-self-center ms-2">
+            Save
           </button>
       </div> 
     </form>
