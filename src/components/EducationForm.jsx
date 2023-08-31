@@ -2,6 +2,8 @@
 import { Buttons } from "./Buttons"
 
 export function EducationForm({data, onSubmit, onDelete}) {
+  const {id, ...exceptID} = data;
+  const isEmpty = Object.values(exceptID).every(x => x === '')
   return (
     <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex flex-column">
@@ -37,7 +39,7 @@ export function EducationForm({data, onSubmit, onDelete}) {
             <input type="month" className="form-control" name="endDate" defaultValue={data.endDate}/>
             <label>To</label>
           </div>
-          <Buttons text='Delete' index={data.id} onClick={onDelete}/>
+          <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
           <button type="submit" className="btn btn-primary btn-sm align-self-center ms-2">
             Save
           </button>

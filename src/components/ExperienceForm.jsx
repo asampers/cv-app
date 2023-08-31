@@ -2,6 +2,9 @@
 import { Buttons } from "./Buttons"
 
 export function ExperienceForm({data, onSubmit, onDelete}) {
+  const {id, ...exceptID} = data;
+  const isEmpty = Object.values(exceptID).every(x => x === '')
+  
   return (
     <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex">
@@ -41,7 +44,7 @@ export function ExperienceForm({data, onSubmit, onDelete}) {
             <label>To</label>
           </div>
         </div> 
-        <Buttons text='Delete' index={data.id} onClick={onDelete}/>
+        <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
         <button type="submit" className="btn btn-primary btn-sm align-self-center ms-2">
             Save
           </button>

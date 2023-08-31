@@ -17,7 +17,7 @@ function Education() {
         {items.data.map((school) => (
           <Fragment key={school.id}>
             {(items.displayInfo(school.id)) && <EducationInfo onClick={items.toggleEdit} data={school} />}
-            {(items.displayForm(school.id)) && <EducationForm onSubmit={items.handleSubmit} onDelete={items.handleDelete} data={school} />}
+            {(items.displayForm(school.id)) && <EducationForm onSubmit={items.handleSubmit} onDelete={items.handleDelete} data={school}/>}
           </Fragment>
         ))}
       </div>
