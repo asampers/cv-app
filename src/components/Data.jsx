@@ -62,6 +62,16 @@ const Data = () => {
     setData(dataCopy);
   }
 
+  function handleData(dataCopy, newObject, index, ID) {
+    if (isEmpty(newObject) && data.length > 1) {
+      dataCopy.splice(index, 1)
+    } else if (!isEmpty(newObject)) {
+      newObject.id = ID;
+      dataCopy[index] = newObject;
+    }
+    setData(dataCopy);
+  }
+
   function handleSubmit(e) {
     const ID = e.target.getAttribute("data-index")
     const index = data.findIndex(obj => obj.id == ID)
@@ -69,13 +79,7 @@ const Data = () => {
     toggleShowForm();
     const newObject = createNewObject(e.target);
     const dataCopy = [...data];
-    if (isEmpty(newObject)) {
-      dataCopy.splice(index, 1)
-    } else {
-    newObject.id = ID;
-    dataCopy[index] = newObject;
-    }
-    setData(dataCopy);
+    handleData(dataCopy, newObject, index, ID);
   }
 
   return { data, noData, showForm, selectedId, toggleShowForm, handleSubmit, addEntry, toggleEdit, displayInfo, displayForm, handleDelete};

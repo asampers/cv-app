@@ -9,8 +9,6 @@ function Education() {
   
     return (
       <>
-      {console.log(items.data)}
-      {console.log(items.showForm)}
       <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
         <div className='d-flex align-items-center'>
           {<h3>Education</h3>}

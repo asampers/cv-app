@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
-export function ExperienceForm({data, onSubmit}) {
+import { Buttons } from "./Buttons"
+
+export function ExperienceForm({data, onSubmit, onDelete}) {
   return (
     <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex">
@@ -39,8 +41,9 @@ export function ExperienceForm({data, onSubmit}) {
             <label>To</label>
           </div>
         </div> 
-        <button type="submit" className="btn btn-primary align-self-center ms-4">
-            Submit
+        <Buttons text='Delete' index={data.id} onClick={onDelete}/>
+        <button type="submit" className="btn btn-primary btn-sm align-self-center ms-2">
+            Save
           </button>
       </div> 
     </form>
