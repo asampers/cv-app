@@ -10,10 +10,11 @@ function ExperienceInfo({data, onClick}) {
   return (
     <Fragment>
     <div className='d-flex align-items-center mt-2'>
-          {data.title && <p className='me-3'>Job title: {data.title}</p>}
-          {data.company && <p className='me-3'>Company: {data.company}</p> }
+      <div>
+        {data.title && <span><b>{data.title}</b>, <i>{data.company}</i></span>}
+        {data.startDate && <p className='me-3'>{formatDate(data.startDate)} - {formatDate(data.endDate)}</p> }
+      </div>    
           {data.duties && <p className='me-3'>Responsibilities: {data.duties}</p> }
-          {data.startDate && <p className='me-3'>{formatDate(data.startDate)} - {formatDate(data.endDate)}</p> }
           <Buttons index={data.id} text="Edit" onClick={onClick}/>
         </div>
         <div className='d-flex align-items-center'>

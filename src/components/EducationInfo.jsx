@@ -11,9 +11,9 @@ function EducationInfo({data, onClick}) {
     <Fragment>
       <div className='d-flex'>
         <div className='d-flex flex-column'>  
-          {data.degree && <p className='fw-bold'>{data.degree} - {data.major}</p> }
+          {data.degree && <span className='fw-bold'>{data.degree} - {data.major}</span> }
           {data.minor && <span className=''>Minor: {data.minor}</span> }
-          {data.school && <p className='fst-italic'>{data.school}</p>}
+          {data.school && <span className='fst-italic'>{data.school}</span>}
         </div>  
           {data.startDate && <p className=''>{formatDate(data.startDate)} - {formatDate(data.endDate)}</p> }
           <Buttons index={data.id} text="Edit" onClick={onClick}/>
