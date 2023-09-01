@@ -9,17 +9,15 @@ function ExperienceInfo({data, onClick}) {
   if(anyData) {
   return (
     <Fragment>
-    <div className='d-flex align-items-center mt-2'>
-      <div>
-        {data.title && <span><b>{data.title}</b>, <i>{data.company}</i></span>}
-        {data.startDate && <p className='me-3'>{formatDate(data.startDate)} - {formatDate(data.endDate)}</p> }
+      <div className="d-flex w-100">
+        <div className="d-flex flex-column me-auto w-75">
+          {data.title && <span><b>{data.title}</b>, <i>{data.company}</i></span>}
+          {data.duties && <span className=''>{data.duties}</span> }
+        </div>
+        {data.startDate && <span className="mt-auto mb-auto">{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
+        <Buttons index={data.id} text="Edit" onClick={onClick}/>
       </div>    
-          {data.duties && <p className='me-3'>Responsibilities: {data.duties}</p> }
-          <Buttons index={data.id} text="Edit" onClick={onClick}/>
-        </div>
-        <div className='d-flex align-items-center'>
-          
-        </div>
+    
     </Fragment>
   )
   }

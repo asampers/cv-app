@@ -9,9 +9,9 @@ function Education() {
   
     return (
       <>
-      <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
-        <div className='d-flex align-items-center'>
-          {<h3>Education</h3>}
+      <div className='d-flex flex-column justify-content-center align-items-center w-100'>
+        <div className='border-top border-bottom border-dark d-flex align-items-center w-100'>
+          <h3>Education</h3>
           {!items.showForm && <Buttons text="Add School" onClick={items.noData ? items.toggleShowForm : items.addEntry}/> }
         </div>
         {items.data.map((school) => (

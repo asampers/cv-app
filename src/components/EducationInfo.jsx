@@ -9,17 +9,14 @@ function EducationInfo({data, onClick}) {
   if(anyData) {
   return (
     <Fragment>
-      <div className='d-flex'>
-        <div className='d-flex flex-column'>  
+      <div className='d-flex w-100'>
+        <div className='d-flex flex-column me-auto'>  
           {data.degree && <span className='fw-bold'>{data.degree} - {data.major}</span> }
           {data.minor && <span className=''>Minor: {data.minor}</span> }
           {data.school && <span className='fst-italic'>{data.school}</span>}
-        </div>  
-          {data.startDate && <p className=''>{formatDate(data.startDate)} - {formatDate(data.endDate)}</p> }
+        </div> 
+          {data.startDate && <span className='mt-auto mb-auto'>{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
           <Buttons index={data.id} text="Edit" onClick={onClick}/>
-        </div>
-        <div className='d-flex align-items-center'>
-          
       </div>
     </Fragment>
   )

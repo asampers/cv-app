@@ -10,11 +10,11 @@ function Skills() {
   
   return (
     <>
-      <div className='d-flex align-items-center'>
+      <div className='border-top border-bottom border-dark d-flex align-items-center w-100'>
         <h3>Skills</h3>
-        {!item.showForm && <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/> }
+        {(!item.showForm && item.noData) && <Buttons text="Add" onClick={item.toggleShowForm}/> }
       </div>
-      {item.showForm ? < SkillsForm data={skills} onSubmit={item.handleSubmit} onDelete={item.handleDelete}  /> : <SkillsInfo skills={skills} />}
+      {item.showForm ? < SkillsForm data={skills} onSubmit={item.handleSubmit} onDelete={item.handleDelete}  /> : <SkillsInfo skills={skills} onClick={item.toggleEdit} />}
     </>
   )
 }
