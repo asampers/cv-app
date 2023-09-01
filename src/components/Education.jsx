@@ -10,9 +10,9 @@ function Education() {
     return (
       <>
       <div className='d-flex flex-column justify-content-center align-items-center w-100'>
-        <div className='border-top border-bottom border-dark d-flex align-items-center w-100'>
+        <div className='border-top border-dark d-flex align-items-center w-100'>
           <h3>Education</h3>
-          {!items.showForm && <Buttons text="Add School" onClick={items.noData ? items.toggleShowForm : items.addEntry}/> }
+          {!items.showForm && <Buttons text="Add" onClick={items.noData ? items.toggleShowForm : items.addEntry}/> }
         </div>
         {items.data.map((school) => (
           <Fragment key={school.id}>

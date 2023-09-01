@@ -2,7 +2,7 @@ import { Data } from './Data';
 import { Buttons } from './Buttons';
 import { HeaderForm } from './HeaderForm';
 import { HeaderInfo } from './HeaderInfo';
-import '../styles/Header.css'
+
 
 export function Header() {
   const item = Data();

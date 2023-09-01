@@ -45,7 +45,7 @@ export function ExperienceForm({data, onSubmit, onDelete}) {
           </div>
         </div> 
         <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
-        <button type="submit" className="btn btn-primary btn-sm align-self-center ms-2">
+        <button type="submit" className="btn btn-success btn-sm align-self-center ms-2">
             Save
           </button>
       </div> 
