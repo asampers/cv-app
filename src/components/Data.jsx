@@ -16,9 +16,9 @@ const Data = () => {
   }
 
   function toggleEdit(e) {
-    const index = e.target.getAttribute("data-index");
+    const index = e.currentTarget.getAttribute("data-index");
     setSelectedId(index);
-    toggleShowForm()
+    setShowForm(true);
   }
   
   function toggleShowForm() {

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-export function Buttons({text, onClick, index}) {
+export function Buttons({text, onClick, dataIndex}) {
+  
   let icon;
   switch (text) {
       case 'Add':
@@ -15,7 +16,7 @@ export function Buttons({text, onClick, index}) {
             icon = 'Cancel';
   }
   return (    
-        <button data-index={index} className={`btn ${text} btn-sm align-self-center ms-2`} onClick={onClick}>
+        <button data-index={dataIndex} className={`btn ${text} btn-sm align-self-center ms-2`} onClick={onClick}>
               {icon}
         </button> 
   )       

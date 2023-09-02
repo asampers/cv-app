@@ -9,7 +9,7 @@ export function SkillsInfo({skills, onClick}) {
     return (
       <>
         <ul>{skillItems}</ul>
-        <Buttons index={skills.id} text="Edit" onClick={onClick}/>
+        <Buttons dataIndex={skills.id} text="Edit" onClick={onClick}/>
       </>
     )
   }

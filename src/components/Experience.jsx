@@ -16,7 +16,7 @@ export function Experience() {
         </div>
         {items.data.map((job) => (
           <Fragment key={job.id}>
-            {(items.displayInfo(job.id)) && <ExperienceInfo onClick={items.toggleEdit} data={job} />}
+            {(items.displayInfo(job.id)) && <ExperienceInfo onClick={items.toggleEdit} data={job} showBtn={!items.showForm} />}
             {(items.displayForm(job.id)) && <ExperienceForm onSubmit={items.handleSubmit} onDelete={items.handleDelete} data={job} />}
           </Fragment>
         ))}

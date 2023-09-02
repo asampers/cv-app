@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { Buttons } from "./Buttons";
 import { formatDate } from "./helperFunctions";
 
-function ExperienceInfo({data, onClick}) {
+function ExperienceInfo({data, onClick, showBtn}) {
   const anyData = Object.keys(data).length > 1;
   
   if(anyData) {
@@ -15,9 +15,8 @@ function ExperienceInfo({data, onClick}) {
           {data.duties && <span className=''>{data.duties}</span> }
         </div>
         {data.startDate && <span className="mt-auto mb-auto">{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
-        <Buttons index={data.id} text="Edit" onClick={onClick}/>
+        {showBtn && <Buttons dataIndex={data.id} text="Edit" onClick={onClick}/> }
       </div>    
-    
     </Fragment>
   )
   }
