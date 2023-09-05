@@ -7,10 +7,10 @@ export function SkillsInfo({skills, onClick}) {
     const skillItems = skillList.map((skill, index) => <li key={index}>{skill}</li>)
 
     return (
-      <>
-        <ul>{skillItems}</ul>
+      <div className="d-flex justify-content-between">
+        <ul className="row-list">{skillItems}</ul>
         <Buttons dataIndex={skills.id} text="Edit" onClick={onClick}/>
-      </>
+      </div>
     )
   }
 }

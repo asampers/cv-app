@@ -1,3 +1,10 @@
-.skills {
-  width: 95vw;
+.row-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: inside;
+  padding-left: 0;
+}
+
+.row-list li {
+  flex-basis: calc(25%);
 }
