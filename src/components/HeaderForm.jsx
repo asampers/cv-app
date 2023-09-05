@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Buttons } from "./Buttons"
+import "../styles/Form.css"
 
 export function HeaderForm({data, onSubmit, onDelete}) {
   const {id, ...exceptID} = data;
@@ -11,12 +12,12 @@ export function HeaderForm({data, onSubmit, onDelete}) {
       <div className="d-flex flex-column">
         <div className="d-flex">
           <div className="form-floating mb-3 me-2">
-            <input type="text" className="form-control" name='firstName' defaultValue={data.firstName}/>
-            <label>First Name</label>
+            <input type="text" className="form-control" name='firstName' defaultValue={data.firstName} required/>
+            <label className="required-field">First Name</label>
           </div> 
           <div className="form-floating mb-3 me-2">
-            <input type="text" className="form-control" name='lastName' defaultValue={data.lastName}/>
-            <label>Last Name</label>
+            <input type="text" className="form-control" name='lastName' defaultValue={data.lastName} required/>
+            <label className="required-field">Last Name</label>
           </div>
           <div className="form-floating mb-3 me-2">
             <input type="tel" className="form-control" name='phone' defaultValue={data.phone}/>
@@ -34,8 +35,9 @@ export function HeaderForm({data, onSubmit, onDelete}) {
               className="form-control"
               name='email'
               defaultValue={data.email}
+              required
             />
-            <label>Email address</label>
+            <label className="required-field">Email address</label>
           </div>
           <div className="form-floating mb-3 me-2">
             <input type="text" className="form-control" name='linkedIn' defaultValue={data.linkedIn}/>
