@@ -10,7 +10,7 @@ function Skills() {
   
   return (
     <>
-      <div className='border-top border-dark d-flex align-items-center w-100'>
+      <div className='border-top border-dark d-flex w-100'>
         <h3>Skills</h3>
         {(!item.showForm && item.noData) && <Buttons text="Add" onClick={item.toggleShowForm}/> }
       </div>

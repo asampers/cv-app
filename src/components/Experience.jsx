@@ -9,7 +9,7 @@ export function Experience() {
 
   return (
     <>
-      <div className='d-flex flex-column justify-content-center align-items-center w-100'>
+      <div className='d-flex flex-column w-100'>
         <div className='border-top border-dark d-flex align-items-center w-100'>
           <h3>Experience</h3>
           {!items.showForm && <Buttons text="Add" onClick={items.noData ? items.toggleShowForm : items.addEntry}/> }
