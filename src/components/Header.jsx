@@ -14,7 +14,7 @@ export function Header() {
       <>
       <div className='container-fluid d-flex flex-column justify-content-center align-items-center'>
         <div className='d-flex align-items-center'>
-          <h3>{noName ? 'Header' : fullName}</h3>
+          {!item.showForm && <h3>{noName ? 'Header' : fullName}</h3> }
           {!item.showForm && <Buttons text={item.noData ? "Add" : "Edit"} onClick={item.toggleShowForm}/> }
         </div>
         {item.showForm ? <HeaderForm onSubmit={item.handleSubmit} onDelete={item.handleDelete} data={person} /> : <HeaderInfo person={person} /> }

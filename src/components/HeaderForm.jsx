@@ -8,6 +8,7 @@ export function HeaderForm({data, onSubmit, onDelete}) {
 
   return (
     <>
+    <h3>Header</h3>
     <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex flex-column">
         <div className="d-flex">
