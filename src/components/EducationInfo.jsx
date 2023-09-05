@@ -9,7 +9,7 @@ function EducationInfo({data, onClick, showBtn}) {
   if(anyData) {
   return (
     <Fragment>
-      <div className='d-flex w-100'>
+      <div className='d-flex w-100 mb-2'>
         <div className='d-flex flex-column me-auto'>  
           {data.degree && <span className='fw-bold'>{data.degree} Degree - {data.major}</span> }
           {data.minor && <span className=''>Minor: {data.minor}</span> }
