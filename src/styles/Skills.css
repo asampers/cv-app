@@ -12,3 +12,9 @@
 .skills-box {
   min-width: 300px;
 }
+
+@media (max-width: 768px) {
+  .row-list li {
+    flex-basis: calc(50%);
+  }
+}

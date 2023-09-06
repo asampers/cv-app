@@ -8,7 +8,7 @@ export function SkillsInfo({skills, onClick}) {
 
     return (
       <div className="d-flex justify-content-between">
-        <ul className="row-list">{skillItems}</ul>
+        <ul className="row-list flex-fill">{skillItems}</ul>
         <Buttons dataIndex={skills.id} text="Edit" onClick={onClick}/>
       </div>
     )

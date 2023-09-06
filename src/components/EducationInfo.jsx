@@ -15,7 +15,7 @@ function EducationInfo({data, onClick, showBtn}) {
           {data.minor && <span className=''>Minor: {data.minor}</span> }
           {data.school && <span className='fst-italic'>{data.school}</span>}
         </div> 
-          {data.startDate && <span className='mt-auto mb-auto'>{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
+          {data.startDate && <span className='date-range mt-auto mb-auto'>{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
           {showBtn && <Buttons dataIndex={data.id} text="Edit" onClick={onClick}/> }
       </div>
     </Fragment>

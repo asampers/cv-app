@@ -14,7 +14,7 @@ function ExperienceInfo({data, onClick, showBtn}) {
           {data.title && <span><b>{data.title}</b>, <i>{data.company}</i></span>}
           {data.duties && <span className=''>{data.duties}</span> }
         </div>
-        {data.startDate && <span className="mt-auto mb-auto">{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
+        {data.startDate && <span className="date-range mt-auto mb-auto">{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
         {showBtn && <Buttons dataIndex={data.id} text="Edit" onClick={onClick}/> }
       </div>    
     </Fragment>
