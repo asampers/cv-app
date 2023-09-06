@@ -31,8 +31,8 @@ export function EducationForm({data, onSubmit, onDelete}) {
           <div className="form-floating flex-grow-1 mb-3 me-2">
             <select className="form-select" name="degree" defaultValue={data.degree} required>
               <option value="Associate">Associate</option>
-              <option value="Bachelor's">Bachelor's</option>
-              <option value="Master's">Master's</option>
+              <option value="Bachelor's">Bachelor&apos;s</option>
+              <option value="Master's">Master&apos;s</option>
               <option value="Doctorate">Doctorate</option>
             </select>
             <label className="required-field">Degree</label>
