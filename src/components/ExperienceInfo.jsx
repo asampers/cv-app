@@ -11,10 +11,10 @@ function ExperienceInfo({data, onClick, showBtn}) {
     <Fragment>
       <div className="d-flex w-100 mb-2">
         <div className="d-flex flex-column me-auto w-75">
-          {data.title && <span><b>{data.title}</b>, <i>{data.company}</i></span>}
+          <span><b>{data.title}</b>, <i>{data.company}</i></span>
           {data.duties && <span className=''>{data.duties}</span> }
         </div>
-        {data.startDate && <span className="date-range mt-auto mb-auto">{formatDate(data.startDate)} - {formatDate(data.endDate)}</span> }
+        <span className="date-range mt-auto mb-auto">{formatDate(data.startDate)} - {formatDate(data.endDate)}</span>
         {showBtn && <Buttons dataIndex={data.id} text="Edit" onClick={onClick}/> }
       </div>    
     </Fragment>
