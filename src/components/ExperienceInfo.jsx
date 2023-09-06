@@ -10,7 +10,7 @@ function ExperienceInfo({data, onClick, showBtn}) {
   return (
     <Fragment>
       <div className="d-flex w-100 mb-2">
-        <div className="d-flex flex-column me-auto w-75">
+        <div className="d-flex flex-column me-auto">
           <span><b>{data.title}</b>, <i>{data.company}</i></span>
           {data.duties && <span className=''>{data.duties}</span> }
         </div>
