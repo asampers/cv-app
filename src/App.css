@@ -6,3 +6,6 @@ h3 {
   margin-top: .5rem !important;
 }
 
+.md.hydrated {
+  margin-right: 2px;
+}
