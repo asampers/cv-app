@@ -8,3 +8,7 @@
 .row-list li {
   flex-basis: calc(25%);
 }
+
+.skills-box {
+  min-width: 300px;
+}

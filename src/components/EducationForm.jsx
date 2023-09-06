@@ -8,7 +8,7 @@ export function EducationForm({data, onSubmit, onDelete}) {
   return (
     <form onSubmit={onSubmit} data-index={data.id}>
       <div className="d-flex flex-column">
-        <div className="d-flex">
+        <div className="d-flex flex-wrap flex-md-nowrap">
           <div className="form-floating flex-fill mb-3 me-2">
             <input type="text" className="form-control" name="school" defaultValue={data.school} required/>
             <label className="required-field">School/University</label>
@@ -27,7 +27,7 @@ export function EducationForm({data, onSubmit, onDelete}) {
             <label>To</label>
           </div>
         </div>
-        <div className="d-flex">
+        <div className="d-flex flex-wrap flex-md-nowrap mb-2">
           <div className="form-floating flex-grow-1 mb-3 me-2">
             <select className="form-select" name="degree" defaultValue={data.degree} required>
               <option value="Associate">Associate</option>
@@ -45,10 +45,12 @@ export function EducationForm({data, onSubmit, onDelete}) {
             <input type="text" className="form-control" name="minor" defaultValue={data.minor}/>
             <label>Minor</label>
           </div>
-          <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
-          <button type="submit" className="btn btn-success btn-sm align-self-center ms-2">
-            Save
-          </button>
+          <span className="mb-auto mt-auto">
+            <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
+            <button type="submit" className="btn btn-success btn-sm align-self-center ms-2">
+              Save
+            </button>
+          </span>
         </div> 
       </div> 
     </form>

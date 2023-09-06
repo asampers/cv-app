@@ -9,3 +9,13 @@ h3 {
 .md.hydrated {
   margin-right: 2px;
 }
+
+@media (max-width: 768px) {
+  .resume.border {
+    border-bottom: none !important;
+  }
+
+  .resume.rounded {
+    border-radius: .375rem .375rem 0 0 !important;
+  }
+}

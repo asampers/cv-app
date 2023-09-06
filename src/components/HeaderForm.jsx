@@ -10,8 +10,8 @@ export function HeaderForm({data, onSubmit, onDelete}) {
     <>
     <h3>Header</h3>
     <form onSubmit={onSubmit} data-index={data.id}>
-      <div className="d-flex flex-column">
-        <div className="d-flex">
+      <div className="d-flex flex-column ">
+        <div className="d-flex flex-wrap flex-md-nowrap">
           <div className="form-floating mb-3 me-2">
             <input type="text" className="form-control" name='firstName' defaultValue={data.firstName} required/>
             <label className="required-field">First Name</label>
@@ -29,7 +29,7 @@ export function HeaderForm({data, onSubmit, onDelete}) {
             <label>Location</label>
           </div>
         </div>
-        <div className="d-flex">
+        <div className="d-flex flex-wrap flex-md-nowrap mb-2">
           <div className="form-floating flex-fill mb-3 me-2">
             <input
               type="email"
@@ -48,10 +48,12 @@ export function HeaderForm({data, onSubmit, onDelete}) {
             <input type="text" className="form-control" name='portfolio' defaultValue={data.portfolio}/>
             <label>Portfolio</label>
           </div>
+          <span className="mt-auto mb-auto">
           <Buttons text={isEmpty ? 'Cancel' : 'Delete'} index={data.id} onClick={onDelete}/>
           <button type="submit" className="btn btn-success btn-sm align-self-center ms-2">
             Save
           </button>
+          </span>
         </div> 
       </div> 
     </form>

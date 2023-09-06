@@ -7,8 +7,8 @@ export function SkillsForm({data, onSubmit, onDelete}) {
 
   return (
     <form className="skills" onSubmit={onSubmit} data-index={data.id}>
-      <div className="d-flex">
-          <div className="form-floating flex-fill mb-3 me-2">
+      <div className="d-flex flex-wrap flex-md-nowrap">
+          <div className="skills-box form-floating flex-fill mb-3 me-2">
             <textarea
               className="form-control"
               name="skills"

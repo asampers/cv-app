@@ -9,7 +9,7 @@ export function ExperienceForm({data, onSubmit, onDelete}) {
   return (
     <form onSubmit={onSubmit} data-index={data.id}>
         <div className="d-flex flex-column">
-          <div className="d-flex">
+          <div className="d-flex flex-wrap flex-md-nowrap">
             <div className="form-floating mb-3 me-2">
               <input type="text" className="form-control" name="title" defaultValue={data.title} required/>
               <label className="required-field">Job Title</label>
