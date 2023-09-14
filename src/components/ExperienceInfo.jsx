@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Fragment } from "react";
 import { Buttons } from "./Buttons";
 import { formatDate } from "./helperFunctions";
@@ -20,6 +20,12 @@ function ExperienceInfo({data, onClick, showBtn}) {
     </Fragment>
   )
   }
+}
+
+ExperienceInfo.propTypes = {
+  data: PropTypes.object,
+  onClick: PropTypes.func,
+  showBtn: PropTypes.bool,
 }
 
 export { ExperienceInfo };

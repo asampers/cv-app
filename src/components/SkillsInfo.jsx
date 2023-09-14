@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Buttons } from "./Buttons"
 
 export function SkillsInfo({skills, onClick}) {
@@ -13,4 +13,9 @@ export function SkillsInfo({skills, onClick}) {
       </div>
     )
   }
+}
+
+SkillsInfo.propTypes = {
+  skills: PropTypes.object,
+  onClick: PropTypes.func,
 }

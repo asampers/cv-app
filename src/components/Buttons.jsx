@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 export function Buttons({text, onClick, dataIndex}) {
   
   let icon;
@@ -20,4 +20,10 @@ export function Buttons({text, onClick, dataIndex}) {
               {icon}
         </button> 
   )       
+}
+
+Buttons.propTypes = {
+      text: PropTypes.string,
+      onClick: PropTypes.func,
+      dataIndex: PropTypes.string,
 }

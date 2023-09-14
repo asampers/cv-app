@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Buttons } from "./Buttons"
 
 export function SkillsForm({data, onSubmit, onDelete}) {
@@ -25,3 +25,9 @@ export function SkillsForm({data, onSubmit, onDelete}) {
     </form>
   )
 }
+
+SkillsForm.propTypes = {
+  data: PropTypes.object,
+  onSubmit: PropTypes.func,
+  onDelete: PropTypes.func,
+}  

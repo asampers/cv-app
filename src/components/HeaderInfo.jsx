@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
+
 export function HeaderInfo({person}) {
   return (
     <div className='d-flex align-items-center justify-content-evenly flex-wrap'>
@@ -9,4 +10,8 @@ export function HeaderInfo({person}) {
       {person.portfolio && <p className='me-3'><ion-icon name="book-outline"></ion-icon>{person.portfolio}</p> }
     </div>
   )  
+}
+
+HeaderInfo.propTypes = {
+  person: PropTypes.object,
 }

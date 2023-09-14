@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Fragment } from "react";
 import { Buttons } from "./Buttons";
 import { formatDate } from "./helperFunctions";
@@ -21,6 +21,12 @@ function EducationInfo({data, onClick, showBtn}) {
     </Fragment>
   )
   }
+}
+
+EducationInfo.propTypes = {
+  data: PropTypes.object,
+  onClick: PropTypes.func,
+  showBtn: PropTypes.bool,
 }
 
 export { EducationInfo };

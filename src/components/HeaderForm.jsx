@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { Buttons } from "./Buttons"
 import "../styles/Form.css"
 
@@ -59,4 +59,10 @@ export function HeaderForm({data, onSubmit, onDelete}) {
     </form>
     </>
   )
+}
+
+HeaderForm.propTypes = {
+  data: PropTypes.object,
+  onSubmit: PropTypes.func,
+  onDelete: PropTypes.func, 
 }
